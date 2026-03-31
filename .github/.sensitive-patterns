@@ -1,0 +1,60 @@
+# ============================================================
+# SENSITIVE DATA PATTERNS
+# ============================================================
+# This file defines patterns that should NEVER appear in commits.
+# The pre-commit hook scans all staged files against these.
+#
+# Format:
+#   BLOCK: <regex>    — Blocks the commit (default if no prefix)
+#   WARN:  <regex>    — Warns but allows the commit
+#
+# Lines starting with # are comments.
+# Patterns use grep -E (extended regex) syntax.
+#
+# CUSTOMIZE THIS FILE FOR EVERY PROJECT.
+# ============================================================
+
+# --- Personal Paths (Windows) ---
+BLOCK: C:\\Users\\[a-zA-Z]+\\(OneDrive|Desktop|Documents|Downloads)
+BLOCK: C:\\Users\\evang
+
+# --- Personal Paths (Mac/Linux) ---
+BLOCK: /Users/[a-zA-Z]+/(OneDrive|Desktop|Documents|Downloads)
+BLOCK: /home/[a-zA-Z]+/(OneDrive|Desktop|Documents|Downloads)
+
+# --- API Keys & Tokens ---
+BLOCK: (api[_-]?key|api[_-]?secret|access[_-]?token)\s*[:=]\s*["'][a-zA-Z0-9]{16,}
+BLOCK: sk-[a-zA-Z0-9]{20,}
+BLOCK: ghp_[a-zA-Z0-9]{36}
+BLOCK: xox[bpoas]-[a-zA-Z0-9-]{10,}
+
+# --- AWS ---
+BLOCK: AKIA[0-9A-Z]{16}
+BLOCK: aws[_-]?secret[_-]?access[_-]?key
+
+# --- Passwords ---
+BLOCK: (password|passwd|pwd)\s*[:=]\s*["'][^"']{4,}
+
+# --- Private Keys ---
+BLOCK: -----BEGIN (RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----
+
+# --- Database Connection Strings ---
+BLOCK: (mongodb|postgres|mysql|redis)://[a-zA-Z0-9]+:[a-zA-Z0-9]+@
+
+# --- Email Addresses (personal) ---
+# Add your personal emails here:
+# BLOCK: youremail@gmail\.com
+
+# --- Evernote-Specific (for this project) ---
+BLOCK: birds522
+BLOCK: S=s[0-9]+:U=[0-9]+:E=
+
+# --- Client/Project Names (add yours) ---
+# BLOCK: ClientName1
+# BLOCK: ClientName2
+
+# --- Warnings (review but don't block) ---
+WARN: TODO.*password
+WARN: TODO.*secret
+WARN: TODO.*token
+WARN: hardcoded

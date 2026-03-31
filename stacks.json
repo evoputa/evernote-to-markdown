@@ -1,0 +1,26 @@
+{
+  "_comment": "Define your stacks here. Each key is a stack name, each value is a list of notebook folder names to group under it. Edit this to match your Evernote notebook organization.",
+  "Business": [
+    "Meeting Notes",
+    "Client Projects",
+    "Proposals",
+    "Invoices"
+  ],
+  "Learning": [
+    "Courses",
+    "Certifications",
+    "Book Notes",
+    "Research"
+  ],
+  "Personal": [
+    "Journal",
+    "Recipes",
+    "Travel",
+    "Health"
+  ],
+  "Projects": [
+    "Project Alpha",
+    "Project Beta",
+    "Archive"
+  ]
+}

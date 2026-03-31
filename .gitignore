@@ -1,0 +1,38 @@
+# Evernote backup database (contains your notes - don't commit)
+*.db
+
+# Exported .enex files (large, contain personal data)
+enex_export/
+*.enex
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Output vault (contains personal notes)
+NoteVault/
+output/
